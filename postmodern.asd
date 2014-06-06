@@ -26,7 +26,9 @@
                          (:file "transaction" :depends-on ("query"))
                          (:file "namespace" :depends-on ("query"))
                          #+postmodern-use-mop
-                         (:file "table" :depends-on ("util" "transaction"))
+                         (:file "dao-core" :depends-on ("util" "transaction"))
+                         #+postmodern-use-mop
+                         (:file "table" :depends-on ("dao-core"))
                          (:file "deftable" :depends-on
                                 ("query" #+postmodern-use-mop "table"))))))
 
